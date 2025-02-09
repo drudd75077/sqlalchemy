@@ -41,3 +41,4 @@ microblog.log*
 *.db
 *.sqlite
 .flaskenv
+.env
