@@ -1,10 +1,21 @@
 import os
 from dotenv import load_dotenv
-print(load_dotenv())
+from sqlalchemy import create_engine, MetaData
+from sqlalchemy.orm import DeclarativeBase
 
-print('Database URL:', os.environ['DATABASE_URL'])
+class Model(DeclarativeBase):
+    metadata = MetaData(naming_convention={
+    "ix":"ix_%(column_0_label)s",
+    "uq":"uq_%(table_name)s_%(column_0_name)s"
+    })
 
 
 
+
+
+
+
+
+engine = create_engine(os.environ['DATABASE_URL'])
 
 
